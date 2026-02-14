@@ -3,7 +3,7 @@
     <Appenders>
         <Console name="SysOut" target="SYSTEM_OUT">
             <PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level]: %msg%n" />
-            <RegexFilter regex=".*(If this is a development environment|Reading mappings).*" onMatch="DENY" onMismatch="NEUTRAL"/>
+            <RegexFilter regex=".*(If this is a development environment).*" onMatch="DENY" onMismatch="NEUTRAL"/>
         </Console>
 
         <RollingRandomAccessFile name="File" fileName="logs/latest.log" filePattern="logs/%d{yyyy-MM-dd}-%i.log.gz">
@@ -12,7 +12,7 @@
                 <TimeBasedTriggeringPolicy />
                 <OnStartupTriggeringPolicy />
             </Policies>
-            <RegexFilter regex=".*(If this is a development environment|Reading mappings).*" onMatch="DENY" onMismatch="NEUTRAL"/>
+            <RegexFilter regex=".*(If this is a development environment).*" onMatch="DENY" onMismatch="NEUTRAL"/>
         </RollingRandomAccessFile>
     </Appenders>
 
